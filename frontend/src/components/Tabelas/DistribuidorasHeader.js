@@ -1,0 +1,19 @@
+import React from "react";
+
+const TabelaHeader = () => (
+    <thead>
+        <tr> 
+            <th scope="col"> Código </th>
+            <th scope="col"> Nome </th>
+            <th scope="col"> KW </th>
+            <th scope="col"> Inclusão </th>
+            <th scope="col"> Alteração </th>
+            
+        </tr>
+    </thead>
+);
+
+export default TabelaHeader;
+
+// <th scope="col"> Código </th>
+
