@@ -1,5 +1,5 @@
 import React from "react";
-import Geral from "./components/Geral/Geral.js"
+import Geral from "./components/Geral/Geral.jsx"
 import { Route, Routes } from "react-router-dom";
 
 
