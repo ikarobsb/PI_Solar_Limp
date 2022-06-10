@@ -1,0 +1,46 @@
+
+
+.AreaDados {
+  display: flex;
+  justify-content: center; /* centralização horizontal */
+  align-items: stretch; /* filhos com 100% da altura do pai */
+  height: 95vh; /* altura mínima */
+  text-align: center;
+  background-size: cover;
+  font-size: x-large;
+  font-family: "Roboto", sans-serif;
+  background-image:url(../../assets/bg.png);
+  color: white;
+}
+
+.flex-container {
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group-addon {
+  background-color: #ffffff;
+  color: #2b4898;
+}
+
+i {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.form-group {
+  margin-bottom: 35px;
+}
+
+.input-group-addon {
+  border: 5px hidden transparent;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#login{
+  float: right;
+  display: inline;
+  
+ 
+}

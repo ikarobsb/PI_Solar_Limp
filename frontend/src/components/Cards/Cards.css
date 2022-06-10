@@ -1,0 +1,15 @@
+.cards-containers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 12px;
+}
+
+.text-investir {
+  font-size: 1.2rem;
+  font-weight: 100;
+  text-align: center;
+  font-family: "Roboto";
+  margin: 20px;
+}

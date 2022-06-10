@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+    database:
+        image: mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: solar_limp
+            MYSQL_USER: guilherme
+            MYSQL_PASSWORD: guilherme
+volumes:
+    db-volume:
