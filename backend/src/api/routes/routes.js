@@ -5,6 +5,7 @@ const controllers = require('../controllers/indexControllers.js')
 const usuariosControllers = require('../controllers/usuariosControllers.js')
 const distribuidorasControllers = require('../controllers/distribuidorasControllers.js')
 const areaDeConcessaoControllers = require('../controllers/areaDeConcessaoControllers.js')
+const simulationsController = require('../controllers/simulationsController.js')
 
 // rota raiz
 routes.get('/', controllers.indexRaiz)
@@ -30,7 +31,9 @@ routes.put('/areaconcessao/:id', areaDeConcessaoControllers.update)
 routes.delete('/areaconcessao/:id', areaDeConcessaoControllers.delete)
 routes.get('/areaconcessao/:id', areaDeConcessaoControllers.indexId)
 
-
+// rotas de simulação
+routes.get('/simulacoes/distribuidoras', simulationsController.getPowerDistributors)
+routes.post('/simulacoes/calcular', simulationsController.makeSimulation)
 
 module.exports = routes
 

@@ -1,7 +1,16 @@
 import { useState } from 'react'
 import './style.css'
 
-export default function Input({ children, placeholder, onInput = () => {}, onClick = () => {}, name }) {
+export default function Input({
+  children,
+  placeholder,
+  onInput = () => {},
+  onClick = () => {},
+  name,
+  loading,
+  type,
+  validatedAndDisabled = false
+}) {
   const [value, setValue] = useState('')
 
   function handleInput(event) {
@@ -25,13 +34,24 @@ export default function Input({ children, placeholder, onInput = () => {}, onCli
         name={name}
         onInput={handleInput}
         className="form-control custom-input rounded"
-        type="text"
+        type={type|| 'text'}
         placeholder={placeholder}
+        disabled={validatedAndDisabled}
       />
 
       <div className="ml-2">
-        <button name={name} onClick={handleClick} className="btn btn-primary">
-          <i class="fa-solid fa-arrow-right"></i>
+        <button disabled={validatedAndDisabled} name={name} onClick={handleClick} className="btn btn-primary">
+          {loading ? (
+            <div className="spinner-border spinner-border-sm" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          ) : validatedAndDisabled? 
+            (
+              <i className="fas fa-check"></i>
+            )
+          :(
+            <i class="fa-solid fa-arrow-right"></i>
+          )}
         </button>
       </div>
     </div>
