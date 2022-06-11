@@ -21,6 +21,7 @@ export default function Input({
 
   function handleClick(event) {
     event.target.value = value
+    event.target.name = name
     onClick(event)
   }
   return (

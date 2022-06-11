@@ -42,7 +42,7 @@ export default function AreaDados() {
       notifyError(isValidData.message)
     }
   }
-  const notifyError = customError =>
+  const notifyError = customError => {
     toast.error(
       error.message
         ? error.message
@@ -51,6 +51,7 @@ export default function AreaDados() {
         : 'Ocorreu algum erro inesperado!',
       { autoClose: true, style: { width: '250px' } }
     )
+  }
   const [simulacaoData, setSimulacaoData] = useState({
     cep: '',
     valorDaConta: '',
@@ -69,7 +70,6 @@ export default function AreaDados() {
     }
 
     if (!valorDaConta || valorDaConta <= 0) {
-      notifyError('Valor da conta inválido!')
       return {
         error: true,
         message: 'Valor da conta inválido!',
@@ -118,6 +118,9 @@ export default function AreaDados() {
   async function handleInput(event) {
     setError({ hasError: false, message: '' })
     const { name, value } = event.target
+    if(!name) {
+      return
+    }
     if (name === 'cep') {
       setDistribuidoras([])
       setLoading(true)
@@ -130,7 +133,12 @@ export default function AreaDados() {
           })
         )
         setDistribuidoras(distribuidorasMapped)
-        setSimulacaoData({...simulacaoData, distribuidoraId: distribuidorasMapped[0].value})
+        setSimulacaoData({
+          ...simulacaoData,
+          [name]: value,
+          distribuidoraId: distribuidorasMapped[0].value
+        })
+        return
       } catch (error) {
         setError({ hasError: true, message: error.response.data.message })
         notifyError()
@@ -149,7 +157,6 @@ export default function AreaDados() {
   return (
     <div className="AreaDados">
       <div class="flex-container">
-      {JSON.stringify(simulacaoData)}
         <div class="form-group">
           <p>Faça nossa simulação e veja o quanto você pode economizar</p>
 
@@ -218,16 +225,14 @@ export default function AreaDados() {
               class="btn btn-primary btn-sm w-100"
               onClick={handleSimular}
             >
-             {
-                loadingSimulacao ? 
-                (
-                  <div class="spinner-border text-primary spinner-border-sm" role="status"/>
-                )
-                :
-                (
-                  <span>Simular</span>
-                )
-             }
+              {loadingSimulacao ? (
+                <div
+                  class="spinner-border text-primary spinner-border-sm"
+                  role="status"
+                />
+              ) : (
+                <span>Simular</span>
+              )}
             </button>
           </div>
         </div>
