@@ -4,10 +4,8 @@
   display: flex;
   justify-content: center; /* centralização horizontal */
   align-items: stretch; /* filhos com 100% da altura do pai */
-  min-height: 95vh; /* altura mínima */
   text-align: center;
   background-size: cover;
-  font-size: x-large;
   font-family: "Roboto", sans-serif;
   background-image:url(../../assets/bg.png);
   color: white;
@@ -35,6 +33,7 @@ i {
   background-color: #ffffff;
   z-index: 1;
   color: #2b4898;
+  
   border-radius: 5px 0px 0px 5px;
 }
 
@@ -43,4 +42,20 @@ i {
   display: inline;
   
  
+}
+
+.show-input-animation{
+  animation: show 0.5s ease-in-out;
+}
+
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
