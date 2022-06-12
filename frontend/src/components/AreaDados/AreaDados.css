@@ -44,6 +44,17 @@ i {
  
 }
 
+.simulacao {
+  background-color: #ffffff;
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  flex-grow: 1;
+  width: 500px;
+  flex-direction: column;
+}
+
+
 .show-input-animation{
   animation: show 0.5s ease-in-out;
 }

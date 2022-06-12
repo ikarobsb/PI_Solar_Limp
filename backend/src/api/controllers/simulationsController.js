@@ -95,8 +95,8 @@ module.exports = {
     }
 
     try{
-      const simulationResult = await apiSolar.post('/calculate', simulation)
-      return res.status(200).json(simulationResult.data)
+      const simulationResult = await apiSolar.post('/calculate', {simulation})
+      return res.status(200).json(traduzDadosDeSimulacao(simulationResult.data))
     }
     catch(error) {
       return res.status(500).json({message: error.message})
