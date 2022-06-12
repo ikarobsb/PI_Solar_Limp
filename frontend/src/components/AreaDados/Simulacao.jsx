@@ -27,7 +27,7 @@ export default function Simulacao({ simulacao }) {
   const data = {
     datasets: [
       {
-        label: 'Previsão de Geração',
+        label: 'Previsão de Geração kWh',
         backgroundColor: '#F4BC33',
         borderColor: '#F4BC33',
         data: mappedData,
@@ -38,7 +38,8 @@ export default function Simulacao({ simulacao }) {
   return (
     <>
       <div className='simulacao'>
-      
+        <div className='text-muted'>Você economizaria cerca de R$ <b>{simulacao.economiaAnual}</b> por ano</div>
+        
         <div className="grafico">
         <Line data={data} options={{ responsive: true ,color: '#2B4898', }}></Line>
         </div>
