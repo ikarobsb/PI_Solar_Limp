@@ -1,8 +1,8 @@
 module.exports = {
     host: 'localhost',
     dialect: 'mysql',
-    username: 'root',
-    password: '21111987Ipa',
+    username: 'guilherme',
+    password: 'guilherme',
     database: 'solar_limp',
     define: {
         timestamps:true,

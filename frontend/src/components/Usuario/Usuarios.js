@@ -9,7 +9,7 @@ import api from "../../services/api.js"
 import Moment from 'react-moment'
 
 import "./Usuarios.css"
-import Geral from "../Geral/Geral.js";
+import Geral from "../Geral/Geral.jsx";
 
 function Usuarios() {
 

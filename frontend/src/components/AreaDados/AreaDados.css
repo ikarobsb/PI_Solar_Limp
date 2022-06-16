@@ -4,10 +4,8 @@
   display: flex;
   justify-content: center; /* centralização horizontal */
   align-items: stretch; /* filhos com 100% da altura do pai */
-  height: 95vh; /* altura mínima */
   text-align: center;
   background-size: cover;
-  font-size: x-large;
   font-family: "Roboto", sans-serif;
   background-image:url(../../assets/bg.png);
   color: white;
@@ -19,10 +17,7 @@
   flex-direction: column;
 }
 
-.input-group-addon {
-  background-color: #ffffff;
-  color: #2b4898;
-}
+
 
 i {
   margin-left: 10px;
@@ -35,6 +30,10 @@ i {
 
 .input-group-addon {
   border: 5px hidden transparent;
+  background-color: #ffffff;
+  z-index: 1;
+  color: #2b4898;
+  
   border-radius: 5px 0px 0px 5px;
 }
 
@@ -43,4 +42,31 @@ i {
   display: inline;
   
  
+}
+
+.simulacao {
+  background-color: #ffffff;
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  flex-grow: 1;
+  width: 500px;
+  flex-direction: column;
+}
+
+
+.show-input-animation{
+  animation: show 0.5s ease-in-out;
+}
+
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }

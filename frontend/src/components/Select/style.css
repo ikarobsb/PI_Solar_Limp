@@ -1,0 +1,19 @@
+.custom-input {
+  border: none;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.text-null {
+  color: #2b4898;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.custom-select {
+  border: none;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-radius: 0px 5px 5px 0px;
+}

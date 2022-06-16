@@ -35,7 +35,7 @@ module.exports = {
         });
         return res.status(200).send({
             status: 1,
-            message: "Categoria deletada!"
+            message: "Usuário deletado!"
         });
     },
 
